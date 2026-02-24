@@ -1,0 +1,249 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  contactChannels,
+  coreModel,
+  directors,
+  method,
+  pillars,
+  serviceAreas,
+  siteMeta
+} from "../data/site";
+
+const year = new Date().getFullYear();
+const coreColumns = [
+  { key: "formatos", title: "Formatos", tone: "moss", items: coreModel.formats },
+  { key: "campos", title: "Campos de acción", tone: "bark", items: coreModel.fields },
+  { key: "ejes", title: "Ejes de trabajo", tone: "sky", items: coreModel.axis },
+  { key: "iniciativas", title: "Iniciativas", tone: "leaf", items: coreModel.initiatives }
+];
+---
+
+<BaseLayout title={`${siteMeta.name} | Consultora`} description={siteMeta.description}>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">{siteMeta.name}</span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <ul class="menu">
+          <li><a href="#propuesta">Propuesta</a></li>
+          <li><a href="#core">Core técnico</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <span class="eyebrow">Consultora de la Comarca Andina</span>
+          <h1>{siteMeta.tagline}</h1>
+          <p>{siteMeta.description}</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contacto">Agendar diagnóstico</a>
+            <a class="btn btn-secondary" href="#core">Ver enfoque técnico</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h2>Misión</h2>
+          <p>
+            Contribuir a que organizaciones públicas, privadas y comunitarias mejoren su gestión y
+            desempeño en relación con la sociedad y el territorio.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="propuesta">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Propuesta de valor</h2>
+          <p>
+            Intervenimos en proyectos de inversión y transformación institucional donde conviven
+            exigencias técnicas, impactos territoriales y necesidad de gobernanza participativa.
+          </p>
+        </div>
+        <div class="pillars">
+          {
+            pillars.map((pillar) => (
+              <article class="card">
+                <h3>{pillar.title}</h3>
+                <p>{pillar.description}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="core">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Core técnico Coihue Sur</h2>
+          <p>
+            Modelo de trabajo basado en tecnologías blandas, calidad aplicada y dispositivos de
+            articulación territorial.
+          </p>
+        </div>
+        <div class="core-tree" role="img" aria-label="Diagrama de árbol de formatos, campos, ejes e iniciativas de Coihue Sur">
+          <article class="core-hub card">
+            <span class="core-hub-kicker">Nodo central</span>
+            <h3>Tecnologías blandas</h3>
+            <p>Interfaz entre mejora de procesos, participación y desarrollo territorial sostenible.</p>
+          </article>
+
+          <svg class="core-links" viewBox="0 0 1200 520" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="coihueBranch" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#355949" />
+                <stop offset="100%" stop-color="#6f8c77" />
+              </linearGradient>
+            </defs>
+            <path d="M226 260 C 320 260, 350 90, 478 90" />
+            <path d="M226 260 C 320 260, 350 205, 478 205" />
+            <path d="M226 260 C 320 260, 350 315, 478 315" />
+            <path d="M226 260 C 320 260, 350 430, 478 430" />
+            <path d="M710 90 C 790 90, 810 70, 954 70" />
+            <path d="M710 205 C 790 205, 810 185, 954 185" />
+            <path d="M710 315 C 790 315, 810 335, 954 335" />
+            <path d="M710 430 C 790 430, 810 450, 954 450" />
+          </svg>
+
+          <div class="core-streams">
+            {
+              coreColumns.map((column) => (
+                <article class={`core-col tone-${column.tone}`}>
+                  <h3>{column.title}</h3>
+                  <ul>
+                    {column.items.map((item) => <li>{item}</li>)}
+                  </ul>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Servicios y metodología</h2>
+          <p>
+            Abordaje integral para proyectos de escala con necesidades de calidad, sostenibilidad y
+            licencia social.
+          </p>
+        </div>
+        <div class="services-grid">
+          {
+            serviceAreas.map((area) => (
+              <article class="card">
+                <h3>{area.title}</h3>
+                <p>{area.detail}</p>
+              </article>
+            ))
+          }
+        </div>
+        <div class="method-grid" style="margin-top:1rem;">
+          {
+            method.map((m) => (
+              <article class="card">
+                <span class="step-num">Paso {m.step}</span>
+                <h3>{m.title}</h3>
+                <p>{m.detail}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="equipo">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Equipo directivo</h2>
+          <p>Convergencia entre ingeniería de calidad y metodologías participativas de base territorial.</p>
+        </div>
+        <div class="team-grid">
+          {
+            directors.map((director) => (
+              <article class="card">
+                <div class="avatar" aria-hidden="true">
+                  {director.name
+                    .split(" ")
+                    .slice(0, 2)
+                    .map((part) => part[0])
+                    .join("")}
+                </div>
+                <h3>{director.name}</h3>
+                <p class="role">{director.role}</p>
+                <p>{director.focus}</p>
+                <ul class="highlights">
+                  {director.highlights.map((h) => <li>{h}</li>)}
+                </ul>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Agendar diagnóstico</h2>
+          <p>
+            Primera conversación para evaluar contexto, riesgos, oportunidades y ruta de trabajo
+            viable.
+          </p>
+        </div>
+        <div class="contact-grid">
+          <article class="card">
+            <h3>Canales de contacto</h3>
+            <ul class="contact-list">
+              {
+                contactChannels.map((channel) => (
+                  <li>
+                    <strong>{channel.label}</strong>
+                    {channel.href ? <a href={channel.href}>{channel.value}</a> : <span>{channel.value}</span>}
+                  </li>
+                ))
+              }
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Formulario inicial</h3>
+            <form class="mock-form" aria-label="Formulario de contacto (mockup)">
+              <label for="nombre">Nombre y apellido</label>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" />
+
+              <label for="organizacion">Organización</label>
+              <input id="organizacion" name="organizacion" type="text" autocomplete="organization" />
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" />
+
+              <label for="desafio">Desafío principal</label>
+              <textarea id="desafio" name="desafio"></textarea>
+
+              <button class="btn btn-primary" type="submit">Enviar consulta</button>
+            </form>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span>&copy; {year} {siteMeta.name}</span>
+      <span>{siteMeta.location}</span>
+    </div>
+  </footer>
+</BaseLayout>

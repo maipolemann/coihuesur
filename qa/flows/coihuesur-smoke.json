@@ -1,0 +1,27 @@
+{
+  "base_url": "http://127.0.0.1:4321/coihuesur",
+  "viewport": { "width": 1440, "height": 900 },
+  "steps": [
+    { "action": "open", "url": "/" },
+    { "action": "wait_for", "selector": "main", "timeout": 8 },
+    { "action": "wait_for", "selector": "#core .core-tree", "timeout": 8 },
+    { "action": "assert_text", "selector": "h1", "contains": "Gestión sustentable y participativa" },
+    { "action": "screenshot", "name": "home-top" },
+    { "action": "click", "selector": "a[href='#core']" },
+    { "action": "wait", "seconds": 0.5 },
+    { "action": "assert_url_contains", "value": "#core" },
+    { "action": "assert_text", "selector": "#core h2", "contains": "Core técnico Coihue Sur" },
+    { "action": "assert_text", "selector": "#core .core-hub h3", "contains": "Tecnologías blandas" },
+    { "action": "assert_text", "selector": "#core .tone-moss h3", "contains": "FORMATOS" },
+    { "action": "assert_text", "selector": "#core .tone-sky h3", "contains": "EJES DE TRABAJO" },
+    { "action": "screenshot", "name": "core-section" },
+    { "action": "click", "selector": "a[href='#contacto']" },
+    { "action": "wait", "seconds": 0.5 },
+    { "action": "assert_url_contains", "value": "#contacto" },
+    { "action": "assert_text", "selector": "#contacto h2", "contains": "Agendar diagnóstico" },
+    { "action": "type", "selector": "#nombre", "value": "QA Test", "clear": true },
+    { "action": "type", "selector": "#organizacion", "value": "Coihue QA", "clear": true },
+    { "action": "type", "selector": "#email", "value": "qa@example.com", "clear": true },
+    { "action": "screenshot", "name": "contact-filled" }
+  ]
+}

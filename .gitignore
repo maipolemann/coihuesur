@@ -1,0 +1,12 @@
+contexto/
+.hugo_cache/
+public/
+!public/
+public/*
+!public/favicon.svg
+resources/_gen/
+node_modules/
+dist/
+.astro/
+.qa-serve/
+qa/artifacts/
