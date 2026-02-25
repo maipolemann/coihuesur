@@ -1,7 +1,8 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://maipolemann.github.io",
-  base: "/coihuesur",
-  output: "static"
+  site: "https://coihuesur.ar",
+  base: "/",
+  output: "static",
+  publicDir: "static"
 });
