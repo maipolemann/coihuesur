@@ -35,6 +35,7 @@ export type ServiciosColumn = {
 export const siteMeta = {
   name: "Coihue Sur",
   tagline: "Gestión sustentable y participativa",
+  heroSubline: "Servicio local y robusto",
   description:
     "Consultora con base en la Comarca Andina que integra estrategia, calidad, territorio y participación.",
   location: "Cholila, Comarca Andina, Chubut, Argentina"
