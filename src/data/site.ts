@@ -100,7 +100,7 @@ export const method: MethodStep[] = [
   {
     step: "01",
     title: "Diagnóstico territorial e institucional",
-    detail: "Levantamiento de contexto regulatorio, social, ambiental y operativo."
+    detail: "Relevamiento de contexto regulatorio, social, ambiental y operativo."
   },
   {
     step: "02",
