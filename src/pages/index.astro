@@ -2,21 +2,15 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import {
   contactChannels,
-  coreModel,
   directors,
   method,
   pillars,
   serviceAreas,
+  serviciosColumns,
   siteMeta
 } from "../data/site";
 
 const year = new Date().getFullYear();
-const coreColumns = [
-  { key: "formatos", title: "Formatos", tone: "moss", items: coreModel.formats },
-  { key: "campos", title: "Campos de acción", tone: "bark", items: coreModel.fields },
-  { key: "ejes", title: "Ejes de trabajo", tone: "sky", items: coreModel.axis },
-  { key: "iniciativas", title: "Iniciativas", tone: "leaf", items: coreModel.initiatives }
-];
 ---
 
 <BaseLayout title={`${siteMeta.name} | Consultora`} description={siteMeta.description}>
@@ -29,7 +23,6 @@ const coreColumns = [
       <nav aria-label="Navegación principal">
         <ul class="menu">
           <li><a href="#propuesta">Propuesta</a></li>
-          <li><a href="#core">Core técnico</a></li>
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#equipo">Equipo</a></li>
           <li><a href="#contacto">Contacto</a></li>
@@ -42,12 +35,10 @@ const coreColumns = [
     <section class="hero">
       <div class="shell hero-grid">
         <div>
-          <span class="eyebrow">Consultora de la Comarca Andina</span>
           <h1>{siteMeta.tagline}</h1>
           <p>{siteMeta.description}</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contacto">Agendar diagnóstico</a>
-            <a class="btn btn-secondary" href="#core">Ver enfoque técnico</a>
           </div>
         </div>
         <aside class="hero-card">
@@ -65,8 +56,7 @@ const coreColumns = [
         <div class="section-head">
           <h2>Propuesta de valor</h2>
           <p>
-            Intervenimos en proyectos de inversión y transformación institucional donde conviven
-            exigencias técnicas, impactos territoriales y necesidad de gobernanza participativa.
+            Apoyamos la gestión de proyectos donde conviven exigencias técnicas, impactos territoriales y necesidad de gobernanza participativa.
           </p>
         </div>
         <div class="pillars">
@@ -82,63 +72,24 @@ const coreColumns = [
       </div>
     </section>
 
-    <section id="core">
-      <div class="shell">
-        <div class="section-head">
-          <h2>Core técnico Coihue Sur</h2>
-          <p>
-            Modelo de trabajo basado en tecnologías blandas, calidad aplicada y dispositivos de
-            articulación territorial.
-          </p>
-        </div>
-        <div class="core-tree" role="img" aria-label="Diagrama de árbol de formatos, campos, ejes e iniciativas de Coihue Sur">
-          <article class="core-hub card">
-            <span class="core-hub-kicker">Nodo central</span>
-            <h3>Tecnologías blandas</h3>
-            <p>Interfaz entre mejora de procesos, participación y desarrollo territorial sostenible.</p>
-          </article>
-
-          <svg class="core-links" viewBox="0 0 1200 520" preserveAspectRatio="none" aria-hidden="true">
-            <defs>
-              <linearGradient id="coihueBranch" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#355949" />
-                <stop offset="100%" stop-color="#6f8c77" />
-              </linearGradient>
-            </defs>
-            <path d="M226 260 C 320 260, 350 90, 478 90" />
-            <path d="M226 260 C 320 260, 350 205, 478 205" />
-            <path d="M226 260 C 320 260, 350 315, 478 315" />
-            <path d="M226 260 C 320 260, 350 430, 478 430" />
-            <path d="M710 90 C 790 90, 810 70, 954 70" />
-            <path d="M710 205 C 790 205, 810 185, 954 185" />
-            <path d="M710 315 C 790 315, 810 335, 954 335" />
-            <path d="M710 430 C 790 430, 810 450, 954 450" />
-          </svg>
-
-          <div class="core-streams">
-            {
-              coreColumns.map((column) => (
-                <article class={`core-col tone-${column.tone}`}>
-                  <h3>{column.title}</h3>
-                  <ul>
-                    {column.items.map((item) => <li>{item}</li>)}
-                  </ul>
-                </article>
-              ))
-            }
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="servicios">
       <div class="shell">
         <div class="section-head">
           <h2>Servicios y metodología</h2>
-          <p>
-            Abordaje integral para proyectos de escala con necesidades de calidad, sostenibilidad y
-            licencia social.
-          </p>
+        </div>
+        <div class="servicios-columns">
+          {
+            serviciosColumns.map((col, i) => (
+              <article class={`servicios-col servicios-col-${i === 0 ? "gestion" : "rse"}`}>
+                <h3>{col.title}</h3>
+                <ul>
+                  {col.items.map((item) => (
+                    <li><span>{item}</span></li>
+                  ))}
+                </ul>
+              </article>
+            ))
+          }
         </div>
         <div class="services-grid">
           {
@@ -154,7 +105,6 @@ const coreColumns = [
           {
             method.map((m) => (
               <article class="card">
-                <span class="step-num">Paso {m.step}</span>
                 <h3>{m.title}</h3>
                 <p>{m.detail}</p>
               </article>

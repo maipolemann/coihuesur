@@ -27,63 +27,64 @@ export type ContactChannel = {
   href?: string;
 };
 
+export type ServiciosColumn = {
+  title: string;
+  items: string[];
+};
+
 export const siteMeta = {
   name: "Coihue Sur",
-  tagline: "Gestión sustentable y participativa para inversiones complejas",
+  tagline: "Gestión sustentable y participativa",
   description:
-    "Consultora de la Comarca Andina que integra estrategia, calidad, territorio y participación para proyectos de alto impacto.",
+    "Consultora con base en la Comarca Andina que integra estrategia, calidad, territorio y participación.",
   location: "Cholila, Comarca Andina, Chubut, Argentina"
 };
 
 export const pillars: Pillar[] = [
   {
     title: "Legitimidad territorial",
-    description: "Construcción de acuerdos entre actores públicos, privados y comunitarios."
+    description: "Construcción de acuerdos entre partes interesadas públicas, privadas y comunitarias."
   },
   {
     title: "Sustentabilidad operativa",
     description: "Diseño de soluciones que combinan desempeño técnico y responsabilidad socioambiental."
   },
   {
-    title: "Trazabilidad y mejora",
+    title: "Monitoreo y mejora",
     description: "Procesos con indicadores, estándares de calidad y capacidad de aprendizaje organizacional."
   }
 ];
 
-export const coreModel = {
-  formats: ["Talleres", "Charlas", "Cursos", "Capacitación", "Formación de facilitadores", "Gestión"],
-  fields: ["Responsabilidad Social Empresaria ISO 26000", "Apoyo a la Gestión", "Otros Campos"],
-  axis: [
-    "Gestión de Proyectos Externos",
-    "Apoyo al Desarrollo Interno de RSE",
-    "Mejora de Procesos",
-    "Mejora de la Calidad",
-    "Planeamiento Participativo",
-    "Planeamiento Estratégico"
-  ],
-  initiatives: [
-    "Donaciones y concursos",
-    "Mentoring a pequeños emprendimientos",
-    "Alianzas locales",
-    "Política de RS para la empresa",
-    "Talleres de inteligencia emocional",
-    "Talleres de habilidades socioambientales",
-    "Talleres de bienestar en el trabajo",
-    "Kaizen",
-    "Just in Time",
-    "Trabajo en equipo",
-    "ISO 9001"
-  ]
-};
+export const serviciosColumns: ServiciosColumn[] = [
+  {
+    title: "Mejoras de gestión de procesos y de calidad",
+    items: [
+      "Kaizen",
+      "Just In Time",
+      "ISO 9001",
+      "Planeamiento Participativo",
+      "Planeamiento Estratégico"
+    ]
+  },
+  {
+    title: "Responsabilidad Social Empresaria ISO 26000",
+    items: [
+      "Diseño de donaciones y concursos",
+      "Mentoring a pequeños emprendimientos",
+      "Alianzas locales",
+      "Desarrollo de habilidades Socioambientales y Bien-estar en el Trabajo"
+    ]
+  }
+];
 
 export const serviceAreas: ServiceArea[] = [
   {
     title: "Estrategia de inversión y gobernanza",
-    detail: "Hoja de ruta, arquitectura institucional y coordinación multiactor para implementación efectiva."
+    detail: "Hoja de ruta, arquitectura institucional y coordinación multiactoral para implementación efectiva."
   },
   {
     title: "Gestión socioambiental y diálogo",
-    detail: "Mapeo de actores, prevención de conflictividad y diseño de dispositivos participativos."
+    detail: "Mapeo de partes interesadas, prevención de conflictividad y diseño de dispositivos participativos."
   },
   {
     title: "Calidad y mejora de procesos",
@@ -109,7 +110,7 @@ export const method: MethodStep[] = [
   {
     step: "03",
     title: "Implementación asistida",
-    detail: "Acompañamiento técnico en terreno y coordinación de actores clave."
+    detail: "Acompañamiento técnico en terreno y coordinación de participantes clave."
   },
   {
     step: "04",
@@ -137,7 +138,7 @@ export const directors: DirectorProfile[] = [
       "Planificación participativa, desarrollo económico local y gestión ambiental con enfoque de articulación comunitaria.",
     highlights: [
       "Más de 30 años en trabajo social y políticas de desarrollo",
-      "Experiencia en diseño de procesos participativos multiactor",
+      "Experiencia en diseño de procesos participativos",
       "Práctica territorial sostenida en Comarca Andina"
     ]
   }

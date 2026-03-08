@@ -240,135 +240,69 @@ main section {
   color: var(--ink-muted);
 }
 
-.core-tree {
-  position: relative;
-  border: 1px solid var(--line);
-  border-radius: 1.2rem;
-  padding: 1.2rem;
-  background:
-    radial-gradient(circle at 95% 10%, rgba(116, 153, 170, 0.15), transparent 38%),
-    radial-gradient(circle at 8% 85%, rgba(102, 133, 113, 0.18), transparent 42%),
-    linear-gradient(180deg, #f8f4eb 0%, #f0eee6 100%);
-  overflow: hidden;
-}
-
-.core-hub {
-  position: relative;
-  width: 17rem;
-  border-radius: 999px;
-  margin: 8.4rem 0 0.8rem;
-  border: 1px solid rgba(53, 89, 73, 0.22);
-  background: linear-gradient(135deg, #23493d 0%, #2f6250 50%, #6d8f79 100%);
-  color: #f4f7f2;
-  box-shadow: 0 14px 35px rgba(22, 40, 33, 0.18);
-}
-
-.core-hub-kicker {
-  display: inline-block;
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  opacity: 0.88;
-}
-
-.core-hub h3 {
-  margin: 0.35rem 0 0.45rem;
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 1.42rem;
-  color: #f6f8f1;
-}
-
-.core-hub p {
-  margin: 0;
-  color: rgba(245, 249, 241, 0.9);
-}
-
-.core-streams {
-  margin-left: 21rem;
-  margin-top: -17rem;
+.servicios-columns {
   display: grid;
-  gap: 0.8rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
-.core-col {
-  border: 1px solid var(--line);
-  border-radius: 0.95rem;
-  background: rgba(255, 255, 255, 0.75);
-  padding: 0.9rem;
-  backdrop-filter: blur(2px);
+.servicios-col {
+  border: 2px dashed var(--line);
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
 }
 
-.core-col h3 {
-  margin: 0;
-  font-size: 0.86rem;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
+.servicios-col-gestion {
+  background: rgba(194, 107, 62, 0.08);
+  border-color: rgba(194, 107, 62, 0.35);
 }
 
-.core-col ul {
-  margin: 0.7rem 0 0;
-  padding-left: 0;
+.servicios-col-gestion h3 {
+  border-bottom: 2px solid #b85a7a;
+  color: var(--ink);
+}
+
+.servicios-col-rse {
+  background: rgba(87, 121, 104, 0.1);
+  border-color: rgba(53, 89, 73, 0.4);
+}
+
+.servicios-col-rse h3 {
+  border-bottom: 2px solid var(--brand);
+  color: var(--ink);
+}
+
+.servicios-col h3 {
+  margin: 0 0 0.9rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.servicios-col ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
-  gap: 0.42rem;
+  gap: 0.5rem;
 }
 
-.core-col li {
-  padding: 0.42rem 0.5rem;
-  border-left: 3px solid;
-  border-radius: 0.35rem;
-  font-size: 0.91rem;
-  background: rgba(255, 255, 255, 0.75);
+.servicios-col li {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--ink-muted);
 }
 
-.tone-moss h3 {
-  color: #3f6f58;
+.servicios-col li span {
+  display: inline-block;
+  border-bottom: 1px solid var(--accent-soft);
+  padding-bottom: 0.2rem;
 }
 
-.tone-moss li {
-  border-left-color: #5f8a70;
-}
-
-.tone-bark h3 {
-  color: #6f4b31;
-}
-
-.tone-bark li {
-  border-left-color: #9a6a45;
-}
-
-.tone-sky h3 {
-  color: #2d6882;
-}
-
-.tone-sky li {
-  border-left-color: #4f89a3;
-}
-
-.tone-leaf h3 {
-  color: #2c5544;
-}
-
-.tone-leaf li {
-  border-left-color: #4d7f66;
-}
-
-.core-links {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.core-links path {
-  fill: none;
-  stroke: url(#coihueBranch);
-  stroke-width: 3;
-  opacity: 0.8;
-  filter: drop-shadow(0 0 1px rgba(31, 58, 50, 0.25));
+.servicios-col-rse li span {
+  border-bottom-color: rgba(87, 121, 104, 0.4);
 }
 
 .services-grid,
@@ -385,14 +319,6 @@ main section {
 
 .method-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.step-num {
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--brand);
-  font-weight: 700;
 }
 
 .team-grid {
@@ -494,20 +420,6 @@ footer {
 }
 
 @media (max-width: 72rem) {
-  .core-hub {
-    margin-top: 0;
-    width: 100%;
-    border-radius: 1rem;
-  }
-
-  .core-streams {
-    margin: 0.9rem 0 0;
-  }
-
-  .core-links {
-    display: none;
-  }
-
   .method-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -515,6 +427,7 @@ footer {
 
 @media (max-width: 54rem) {
   .hero-grid,
+  .servicios-columns,
   .services-grid,
   .team-grid,
   .contact-grid,
@@ -540,7 +453,6 @@ footer {
     flex-direction: column;
   }
 
-  .core-streams,
   .method-grid {
     grid-template-columns: 1fr;
   }
