@@ -103,34 +103,7 @@ a {
 }
 
 .hero {
-  position: relative;
-  isolation: isolate;
   padding: 4rem 0 3rem;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background-image: var(--hero-banner);
-  background-size: cover;
-  background-position: 50% 30%;
-  opacity: 0.5;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-    180deg,
-    rgba(247, 244, 237, 0.88) 0%,
-    rgba(247, 244, 237, 0.72) 42%,
-    rgba(247, 244, 237, 0.86) 100%
-  );
 }
 
 .hero-grid {
@@ -397,7 +370,27 @@ main section {
 }
 
 .contact-grid {
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.contact-card {
+  display: grid;
+  gap: 1.5rem 2.5rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.contact-card-lead p {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  line-height: 1.45;
+  color: var(--brand-strong);
+  text-wrap: balance;
+}
+
+.contact-card-channels h3 {
+  margin: 0 0 0.75rem;
 }
 
 .contact-list {
@@ -414,34 +407,6 @@ main section {
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-}
-
-.mock-form {
-  display: grid;
-  gap: 0.65rem;
-}
-
-.mock-form label {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--ink-muted);
-  font-weight: 700;
-}
-
-.mock-form input,
-.mock-form textarea {
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 0.6rem;
-  padding: 0.65rem 0.75rem;
-  font: inherit;
-  background: #fff;
-}
-
-.mock-form textarea {
-  min-height: 6rem;
-  resize: vertical;
 }
 
 footer {
@@ -471,6 +436,10 @@ footer {
   .team-grid,
   .contact-grid,
   .pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
     grid-template-columns: 1fr;
   }
 

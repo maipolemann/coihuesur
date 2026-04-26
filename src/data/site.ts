@@ -38,7 +38,9 @@ export const siteMeta = {
   heroSubline: "Servicio local y robusto",
   description:
     "Consultora con base en la Comarca Andina que integra estrategia, calidad, territorio y participación.",
-  location: "Cholila, Comarca Andina, Chubut, Argentina"
+  location: "Cholila, Comarca Andina, Chubut, Argentina",
+  contactLead:
+    "Agende una entrevista con nosotros y empezaremos a construir la ruta para lograr sus metas"
 };
 
 export const pillars: Pillar[] = [
@@ -148,13 +150,13 @@ export const directors: DirectorProfile[] = [
 export const contactChannels: ContactChannel[] = [
   {
     label: "Email",
-    value: "gurisatti@gmail.com",
-    href: "mailto:gurisatti@gmail.com"
+    value: "coihuesur@gmail.com",
+    href: "mailto:coihuesur@gmail.com"
   },
   {
-    label: "Email",
-    value: "mmpolemann@gmail.com",
-    href: "mailto:mmpolemann@gmail.com"
+    label: "LinkedIn",
+    value: "Coihue Sur en LinkedIn",
+    href: "https://www.linkedin.com/company/coihue-sur"
   },
   {
     label: "Base territorial",
