@@ -89,8 +89,8 @@ const baseUrl = import.meta.env.BASE_URL;
         </div>
         <div class="servicios-columns">
           {
-            serviciosColumns.map((col, i) => (
-              <article class={`servicios-col servicios-col-${i === 0 ? "gestion" : "rse"}`}>
+            serviciosColumns.map((col) => (
+              <article class={`servicios-col servicios-col-${col.variant}`}>
                 <h3>{col.title}</h3>
                 <ul>
                   {col.items.map((item) => (

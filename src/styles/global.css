@@ -254,7 +254,7 @@ main section {
 
 .servicios-columns {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
   margin-bottom: 1.5rem;
 }
@@ -283,6 +283,20 @@ main section {
 .servicios-col-rse h3 {
   border-bottom: 2px solid var(--brand);
   color: var(--ink);
+}
+
+.servicios-col-territorial {
+  background: rgba(31, 58, 50, 0.07);
+  border-color: rgba(31, 58, 50, 0.38);
+}
+
+.servicios-col-territorial h3 {
+  border-bottom: 2px solid var(--ok);
+  color: var(--ink);
+}
+
+.servicios-col-territorial li span {
+  border-bottom-color: rgba(87, 121, 104, 0.45);
 }
 
 .servicios-col h3 {
@@ -425,6 +439,10 @@ footer {
 
 @media (max-width: 72rem) {
   .method-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .servicios-columns {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

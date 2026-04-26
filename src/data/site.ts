@@ -27,9 +27,12 @@ export type ContactChannel = {
   href?: string;
 };
 
+export type ServiciosColumnVariant = "gestion" | "rse" | "territorial";
+
 export type ServiciosColumn = {
   title: string;
   items: string[];
+  variant: ServiciosColumnVariant;
 };
 
 export const siteMeta = {
@@ -60,6 +63,7 @@ export const pillars: Pillar[] = [
 
 export const serviciosColumns: ServiciosColumn[] = [
   {
+    variant: "gestion",
     title: "Mejoras de gestión de procesos y de calidad",
     items: [
       "Kaizen",
@@ -70,12 +74,24 @@ export const serviciosColumns: ServiciosColumn[] = [
     ]
   },
   {
+    variant: "rse",
     title: "Responsabilidad Social Empresaria ISO 26000",
     items: [
       "Diseño de donaciones y concursos",
       "Mentoring a pequeños emprendimientos",
       "Alianzas locales",
       "Desarrollo de habilidades Socioambientales y Bien-estar en el Trabajo"
+    ]
+  },
+  {
+    variant: "territorial",
+    title: "Planificación y participación territorial",
+    items: [
+      "Diagnóstico territorial",
+      "Diseño metodológico participativo",
+      "Talleres con comunidad y profesionales",
+      "Sistematización de información cualitativa",
+      "Producción cartográfica"
     ]
   }
 ];
