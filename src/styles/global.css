@@ -56,7 +56,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 4.35rem;
+  min-height: 6.5rem;
 }
 
 .brand {
@@ -67,12 +67,11 @@ a {
 }
 
 .brand-mark {
-  width: 1.75rem;
-  height: 1.75rem;
-  border-radius: 999px 55% 999px 55%;
-  transform: rotate(-16deg);
-  background: linear-gradient(135deg, var(--brand-strong), var(--brand), var(--ok));
-  box-shadow: inset -3px -4px 8px rgba(255, 255, 255, 0.22);
+  display: block;
+  width: 5.25rem;
+  height: 5.25rem;
+  object-fit: contain;
+  background-color: transparent;
 }
 
 .brand-name {
@@ -104,7 +103,34 @@ a {
 }
 
 .hero {
+  position: relative;
+  isolation: isolate;
   padding: 4rem 0 3rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: var(--hero-banner);
+  background-size: cover;
+  background-position: 50% 30%;
+  opacity: 0.5;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(247, 244, 237, 0.88) 0%,
+    rgba(247, 244, 237, 0.72) 42%,
+    rgba(247, 244, 237, 0.86) 100%
+  );
 }
 
 .hero-grid {
