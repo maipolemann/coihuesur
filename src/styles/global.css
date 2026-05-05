@@ -234,6 +234,12 @@ main section {
   gap: 1rem;
 }
 
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
 .card {
   border: 1px solid var(--line);
   border-radius: 1rem;
@@ -334,6 +340,7 @@ main section {
 .services-grid,
 .method-grid,
 .team-grid,
+.team-grid-collab,
 .contact-grid {
   display: grid;
   gap: 1rem;
@@ -349,6 +356,18 @@ main section {
 
 .team-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.team-subsection-title {
+  margin: 2rem 0 1rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 600;
+  color: var(--brand-strong);
+}
+
+.team-grid-collab {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .avatar {
@@ -452,8 +471,10 @@ footer {
   .servicios-columns,
   .services-grid,
   .team-grid,
+  .team-grid-collab,
   .contact-grid,
-  .pillars {
+  .pillars,
+  .experience-grid {
     grid-template-columns: 1fr;
   }
 

@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import {
+  collaborators,
   contactChannels,
   directors,
+  experienceCases,
   method,
   pillars,
   serviceAreas,
@@ -33,6 +35,7 @@ const baseUrl = import.meta.env.BASE_URL;
         <ul class="menu">
           <li><a href="#propuesta">Propuesta</a></li>
           <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
           <li><a href="#equipo">Equipo</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
@@ -124,11 +127,28 @@ const baseUrl = import.meta.env.BASE_URL;
       </div>
     </section>
 
+    <section id="experiencia">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Nuestra experiencia</h2>
+        </div>
+        <div class="experience-grid">
+          {
+            experienceCases.map((c) => (
+              <article class="card">
+                <h3>{c.title}</h3>
+                <p>{c.body}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
     <section id="equipo">
       <div class="shell">
         <div class="section-head">
-          <h2>Equipo directivo</h2>
-          <p>Convergencia entre ingeniería de calidad y metodologías participativas de base territorial.</p>
+          <h2>Equipo</h2>
         </div>
         <div class="team-grid">
           {
@@ -147,6 +167,24 @@ const baseUrl = import.meta.env.BASE_URL;
                 <ul class="highlights">
                   {director.highlights.map((h) => <li>{h}</li>)}
                 </ul>
+              </article>
+            ))
+          }
+        </div>
+        <h3 class="team-subsection-title">Consultores asociados</h3>
+        <div class="team-grid-collab">
+          {
+            collaborators.map((m) => (
+              <article class="card">
+                <div class="avatar" aria-hidden="true">
+                  {m.name
+                    .split(" ")
+                    .slice(0, 2)
+                    .map((part) => part[0])
+                    .join("")}
+                </div>
+                <h3>{m.name}</h3>
+                <p class="role">{m.role}</p>
               </article>
             ))
           }

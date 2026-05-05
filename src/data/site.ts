@@ -21,6 +21,11 @@ export type DirectorProfile = {
   highlights: string[];
 };
 
+export type TeamMember = {
+  name: string;
+  role: string;
+};
+
 export type ContactChannel = {
   label: string;
   value: string;
@@ -33,6 +38,11 @@ export type ServiciosColumn = {
   title: string;
   items: string[];
   variant: ServiciosColumnVariant;
+};
+
+export type ExperienceCase = {
+  title: string;
+  body: string;
 };
 
 export const siteMeta = {
@@ -138,6 +148,24 @@ export const method: MethodStep[] = [
   }
 ];
 
+export const experienceCases: ExperienceCase[] = [
+  {
+    title: "Gestión de calidad en el sector público",
+    body:
+      "Desarrollamos el Centro de Gestión de la Calidad del Gobierno de la Ciudad de Buenos Aires para contribuir a ordenar sus procesos internos y dar asistencia a PyMEs locales. En el SAME trabajamos con la dirección y los equipos operativos para instalar una cultura de Mejora Continua en distintos sectores, en el marco de un proyecto BID. En el Ministerio de Salud porteño, apoyamos las actividades de Calidad y la formación de equipos que rediseñaban procesos en un contexto de alta exigencia y múltiples partes actoras. El resultado en cada caso fue una organización con mayor capacidad para gestionar su propio desempeño."
+  },
+  {
+    title: "Participación territorial en ordenamiento de los bosques nativos",
+    body:
+      "Ante la necesidad de implementar la Ley 26.331 de protección de los bosques nativos en la Provincia del Chubut, diseñamos un proceso que permitió contar con la voz de las partes interesadas dentro de la comunidad: primero relevamos las perspectivas del personal de las delegaciones forestales, luego desplegamos un esquema de Información, Consulta, Acuerdo y Desacuerdos adaptado al contexto local y realizamos acciones que permitieron la interacción entre instituciones relevantes del sector. En 35 talleres participaron 550 personas con vinculación directa a la temática. Toda la información —textos y cartografía— fue sistematizada y entregada al organismo contratante lista para su uso. Un proceso complejo que se tradujo en insumos concretos para la toma de decisiones."
+  },
+  {
+    title: "Certificación y sistemas de calidad en industria regulada",
+    body:
+      "Cuando una empresa necesita cumplir con marcos normativos exigentes —SENASA, ANMAT, ISO 9001— el desafío no es solo documentar: es construir un sistema que funcione en la práctica. Lo hicimos con Camilo Ferrón S.A. en la industria alimenticia y con VETUE S.A. en el rubro veterinario, acompañando el proceso completo desde el diagnóstico hasta la implementación. En el Ministerio de Salud de la Nación extendimos ese enfoque al sector público, capacitando instituciones de salud en gestión de la calidad."
+  }
+];
+
 export const directors: DirectorProfile[] = [
   {
     name: "Rubén Bruno Gurisatti",
@@ -160,6 +188,21 @@ export const directors: DirectorProfile[] = [
       "Experiencia en diseño de procesos participativos",
       "Práctica territorial sostenida en Comarca Andina"
     ]
+  }
+];
+
+export const collaborators: TeamMember[] = [
+  {
+    name: "Sandra Maranzina",
+    role: "Especialista en desarrollo, políticas públicas e integración regional"
+  },
+  {
+    name: "Hervé Fodor",
+    role: "Consultor en cooperación internacional, traducción e interpretación"
+  },
+  {
+    name: "Juan Gabriel Juara",
+    role: "Consultor en gobernanza y análisis de datos"
   }
 ];
 
